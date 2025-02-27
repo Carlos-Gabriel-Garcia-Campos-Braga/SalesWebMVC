@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SalesWebMVC.Models;
+using SalesWebMVC.Models.ViewModels;
 
 namespace SalesWebMVC.Controllers
 {
@@ -19,6 +20,7 @@ namespace SalesWebMVC.Controllers
         {
             ViewData["Message"] = "Salles Web MVC App";
             ViewData["Creator"] = "Carlos Gabriel Garcia Campos Braga";
+
             return View();
         }
 
