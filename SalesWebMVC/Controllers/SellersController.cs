@@ -29,11 +29,37 @@ namespace SalesWebMVC.Controllers
             return View(viewModel);
         }
 
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create(Seller Seller)
         {
             _SellerService.Insert(Seller);
+            return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult Delete(int? id)
+        {
+            if(id == null)
+            {
+                return NotFound();
+            }
+
+            var obj = _SellerService.FindById(id.Value);
+            if(obj == null)
+            {
+                return NotFound();
+            }
+
+            return View(obj);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Delete(int id)
+        {
+            _SellerService.Remove(id);
             return RedirectToAction(nameof(Index));
         }
     }
