@@ -16,6 +16,7 @@ using SalesWebMVC.Services;
 using System.Globalization;
 using Microsoft.AspNetCore.Localization;
 
+
 namespace SalesWebMVC
 {
     public class Startup
